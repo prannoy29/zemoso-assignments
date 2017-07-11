@@ -1,18 +1,22 @@
 package yourname.assignment.data;
 
 /**
- * Created by Prannoy Sarkar on 23/6/17.
+ * @author Prannoy Sarkar
  */
-public class firstclass {
+public class firstClass{
 
     int num;
     char c;
 
+    /**
+     * Prints variables
+     */
     public void printVar(){
         System.out.println(num);
         System.out.println(c);
     }
 
+    
     public void printMethod2(){
        /* int num1;
         int num2;
@@ -39,7 +43,7 @@ public class firstclass {
 
 
     public static void main(String[] args){
-        firstclass firstinstance = new firstclass();
+        firstClass firstinstance = new firstClass();
         //firstclass secondinstance = new firstclass();
 
         firstinstance.printVar();

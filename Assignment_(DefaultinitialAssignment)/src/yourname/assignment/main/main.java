@@ -1,20 +1,14 @@
 package yourname.assignment.main;
 
-import yourname.assignment.data.firstclass;
+import yourname.assignment.data.firstClass;
 import yourname.assignment.singleton.secondclass;
 
 /**
- * Created by Prannoy Sarkar on 23/6/17.
+ * @author Prannoy Sarkar
  */
 public class main {
-
-    //firstclass obj1 = new firstclass();
-    //obj1.printVar()
-    //obj1.printMethod2()
-    //secondclass  obj2 = new secondclass();
-
     public static void main(String args[]){
-        firstclass obj1 = new firstclass();
+        firstClass obj1 = new firstClass();
         secondclass  obj2 = new secondclass();
         String s = "Prannoy Sarkar";
 
