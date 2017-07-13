@@ -16,7 +16,7 @@ public class firstClass{
         System.out.println(c);
     }
 
-    
+
     public void printMethod2(){
        /* int num1;
         int num2;

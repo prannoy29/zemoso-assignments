@@ -1,42 +1,40 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Scanner;
+
 
 /**
- * Created by zemoso on 10/7/17.
+ * @author Prannoy Sarkar
  */
 public class inputCheck {
-    private char s;
-
-
-
-    public static void main(String args[])throws IOException,ArrayIndexOutOfBoundsException{
-        inputCheck in = new inputCheck();
-        int [] myarray = new int[26];
+    /**
+     *
+     * @param input takes an input string
+     * @return returns boolean value after checking input String with a-z(Case-insensitive)
+     *
+     * The method t checks if the input string contains all the letters of the alphabet a-z (case-insensitive).
+     * Returns True if it contains all, else returns False
+     *
+     */
+    public boolean checkLetterAll(String input) {
+        int[] myarray = new int[52];
         int c;
         int sum = 0;
         Arrays.fill(myarray, -1);
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-       while( (c = bf.read())!=10) {
-           in.s = (char) c;
-           System.out.println("dkkddkkdkd");
-           int a = c-97;
-           if (a < 26 && a > -1 && myarray[a] == -1) {
-               myarray[a] = 0;
-               System.out.println(myarray[a]);
+        char[] chararray = input.toLowerCase().toCharArray();
+        for (char ch : chararray) {
+            c = (int) ch;
+            int a = c - 97;
+            if (a < 26 && a > -1 && myarray[a] == -1) {
+                myarray[a] = 0;
+            }
+        }
 
-           }
-           System.out.println(c);
-       }
-       System.out.println("1234rfvbhjuytfr");
         int i = 0;
-        while(i < 26) {
+        while (i < 26) {
             sum += myarray[i];
             i++;
-            System.out.println(sum);
         }
-        System.out.println((sum==0));
+
+        if (sum == 0) return true;
+        else return false;
     }
 }

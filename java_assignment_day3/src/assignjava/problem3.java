@@ -1,7 +1,7 @@
 package assignjava;
 
 /**
- * Created by Prannoy Sarkar on 30/6/17.
+ * @author Prannoy Sarkar
  */
 
     class Concreteclass{}

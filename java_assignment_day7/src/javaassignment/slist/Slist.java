@@ -1,7 +1,7 @@
 package javaassignment.slist;
 
 /**
- * Created by zemoso on 5/7/17.
+ *@author Prannoy Sarkar
  *
  *
  */

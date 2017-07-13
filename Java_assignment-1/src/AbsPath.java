@@ -9,10 +9,17 @@ import java.util.regex.Pattern;
 /**
  * @author Prannoy Sarkar
  */
-public class absPath {
+public class AbsPath {
     private String dirInput;
     private String regex;
     private ArrayList<String> mylist = new ArrayList<String>();
+
+    /**
+     *
+     * @param dirInput String parameter containing Directory path
+     *
+     *                 This method prints all the absolute path to files or directory that matches with regex
+     */
 
     void getList(String dirInput){
         File file = new File(dirInput);
@@ -23,6 +30,7 @@ public class absPath {
                 if (checkRegex(s, regex)) {
                     //System.out.println("its working fine");
                     File f = new File(dirInput,s);
+
                     mylist.add(f.getAbsolutePath());
                 }
                 getList(dirInput+"/"+s);
@@ -30,13 +38,21 @@ public class absPath {
         }
     }
 
+    /**
+     *
+     * @param s takes a file/directory path String as an input
+     * @param regex takes a REGEX String pattern as an input
+     * @return  returns boolean value whether the String and Regex matches
+     *
+     * The method takes two String, one path of the file/Directory, another the REGEX Pattern
+     */
     boolean checkRegex(String s,String regex){
         Pattern pattern = Pattern.compile(regex);
         Matcher m = pattern.matcher(s);
         return m.matches();
     }
     public static void main(String args[]){
-        absPath obj = new absPath();
+        AbsPath obj = new AbsPath();
         obj.dirInput = "/home";
         obj.regex = ".*.java";
         obj.getList(obj.dirInput);

@@ -1,7 +1,7 @@
 package javaassignment.day2.problem2;
 
 /**
- * Created by Prannoy Sarkar on 28/6/17.
+ * @author Prannoy Sarkar
  */
 public class myclass {
     int i;
@@ -11,7 +11,7 @@ public class myclass {
 
     }
     myclass(int seti){
-        this(); //calling the first constructor from "this"
+        this();
         this.i = seti;
         System.out.println("This is overloading constructor with i = "+ this.i);
     }

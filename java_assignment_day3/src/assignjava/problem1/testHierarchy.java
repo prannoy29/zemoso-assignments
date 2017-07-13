@@ -1,7 +1,7 @@
 package assignjava.problem1;
 
 /**
- * Created by Prannoy Sarkar on 30/6/17.
+ * @author Prannoy Sarkar
  */
 abstract class Rodent{
     Rodent(){System.out.println("This is Rodent object constructor");}

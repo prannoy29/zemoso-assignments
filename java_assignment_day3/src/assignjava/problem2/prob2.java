@@ -1,7 +1,7 @@
 package assignjava.problem2;
 
 /**
- * Created by Prannoy Sarkar on 30/6/17.
+ * @author Prannoy Sarkar
  */
 
 //MY OBSERVATIONS COMMENTED AS

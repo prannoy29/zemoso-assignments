@@ -1,7 +1,7 @@
 package javaassignment.day2.problem4;
 
 /**
- * Created by zemoso on 28/6/17.
+ * @author Prannoy Sarkar
  */
 public class classnew4 {
     classnew4(String s){
