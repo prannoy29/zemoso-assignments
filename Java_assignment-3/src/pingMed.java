@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * @author Prannoy Sarkar
  */
 public class pingMed {
-    static final String command = "ping";
+    private String command;
     private String ip;
     public String s = new String();
     List<Double> timeList = new ArrayList<Double>();
@@ -34,12 +34,15 @@ public class pingMed {
 
     }
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws IOException{
         pingMed ping = new pingMed();
-        ping.ip = "-c 10 www.google.com";
+        System.out.println("Enter a Valid Linux ping command for example - ping -c n , where n is number of ping requests");
+        ping.command = (new BufferedReader(new InputStreamReader(System.in))).readLine();
+        System.out.println("Enter a valid ip address/hostname");
+        ping.ip = (new BufferedReader(new InputStreamReader(System.in))).readLine();
         try {
            double result =  ping.medianArray(ping.getProcessInput(ping.ip,ping.command));
-            System.out.println(result);
+            System.out.println("Median time taken to ping"+" is"+" "+result+" pms");
         } catch (IOException|StringIndexOutOfBoundsException|NumberFormatException e) {
             e.printStackTrace();
         }
