@@ -15,6 +15,16 @@ public class pingMed {
     public String s = new String();
     List<Double> timeList = new ArrayList<Double>();
 
+    /**
+     *
+     * @param ip takes String input as ip address or hostname
+     * @param command takes a valid ping command
+     * @return returns Double list of ping time
+     * @throws IOException when entered command or ip address is not valid
+     * @throws StringIndexOutOfBoundsException when we try to take substring of Strings not of our interest
+     * @throws NumberFormatException when string is converted to double(time in milli seconds), if string is in wrong
+     *  format
+     */
     List<Double> getProcessInput(String ip, String command) throws IOException,StringIndexOutOfBoundsException,NumberFormatException{
         Process p = Runtime.getRuntime().exec(command+" "+ip);
         BufferedReader bf = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -26,6 +36,11 @@ public class pingMed {
         return timeList;
     }
 
+    /**
+     *
+     * @param arr List of double values
+     * @return gives double median of the list of double values
+     */
     double medianArray(List<Double> arr){
         Collections.sort(arr);
         int size = arr.size();
@@ -44,7 +59,7 @@ public class pingMed {
            double result =  ping.medianArray(ping.getProcessInput(ping.ip,ping.command));
             System.out.println("Median time taken to ping"+" is"+" "+result+" pms");
         } catch (IOException|StringIndexOutOfBoundsException|NumberFormatException e) {
-            e.printStackTrace();
+            System.out.println("Command entered is not valid or hostname entered is wrong, Please check again!!!");
         }
     }
 }
