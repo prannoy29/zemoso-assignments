@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 /**
  * @author Prannoy Sarkar
  */
-public class pingMed {
+    public class pingMed {
     private String command;
     private String ip;
     public String s = new String();
@@ -41,7 +41,7 @@ public class pingMed {
      * @param arr List of double values
      * @return gives double median of the list of double values
      */
-    double medianArray(List<Double> arr){
+    double medianArray(List<Double> arr)throws IndexOutOfBoundsException{
         Collections.sort(arr);
         int size = arr.size();
         if(size%2==0)return (arr.get(size / 2) +arr.get((size/2)-1))/2;
@@ -49,7 +49,8 @@ public class pingMed {
 
     }
 
-    public static void main(String args[]) throws IOException{
+    public static void main(String args[]) throws IOException,
+            NumberFormatException,IndexOutOfBoundsException{
         pingMed ping = new pingMed();
         System.out.println("Enter a Valid Linux ping command for example - ping -c n , where n is number of ping requests");
         ping.command = (new BufferedReader(new InputStreamReader(System.in))).readLine();
@@ -57,8 +58,8 @@ public class pingMed {
         ping.ip = (new BufferedReader(new InputStreamReader(System.in))).readLine();
         try {
            double result =  ping.medianArray(ping.getProcessInput(ping.ip,ping.command));
-            System.out.println("Median time taken to ping"+" is"+" "+result+" pms");
-        } catch (IOException|StringIndexOutOfBoundsException|NumberFormatException e) {
+            System.out.println("Median time taken to ping"+" is"+" "+result+" ms");
+        } catch (IOException|NumberFormatException|IndexOutOfBoundsException e) {
             System.out.println("Command entered is not valid or hostname entered is wrong, Please check again!!!");
         }
     }
