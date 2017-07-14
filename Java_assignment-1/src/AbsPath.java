@@ -1,8 +1,8 @@
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -51,17 +51,25 @@ public class AbsPath {
         Matcher m = pattern.matcher(s);
         return m.matches();
     }
-    public static void main(String args[]){
+    public static void main(String args[])throws IOException{
         AbsPath obj = new AbsPath();
-        obj.dirInput = "/home";
-        obj.regex = ".*.java";
+        System.out.println("Enter path to your home directory:");
+        BufferedReader bf1 = new BufferedReader(new InputStreamReader(System.in));
+        obj.dirInput = bf1.readLine();
+        File newfile = new File(obj.dirInput);
+        boolean tt = false;
+        if(newfile.isDirectory())System.out.println("Enter correct directory path");
+        else tt = true;
+        while(tt){
+        System.out.println("Enter Regex:");
+        BufferedReader bf2 = new BufferedReader(new InputStreamReader(System.in));
+        obj.regex = bf2.readLine();
+        if (obj.regex=="-1")break;
         obj.getList(obj.dirInput);
-        //File file = new File(obj.dirInput);
         for (String s : obj.mylist){
             System.out.println(s);
         }
-
-
+        }
     }
 
 
