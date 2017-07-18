@@ -58,17 +58,19 @@ public class AbsPath {
         obj.dirInput = bf1.readLine();
         File newfile = new File(obj.dirInput);
         boolean tt = false;
-        if(newfile.isDirectory())System.out.println("Enter correct directory path");
+        if(!newfile.isDirectory())System.out.println("Enter correct directory path");
         else tt = true;
         while(tt){
         System.out.println("Enter Regex:");
         BufferedReader bf2 = new BufferedReader(new InputStreamReader(System.in));
         obj.regex = bf2.readLine();
-        if (obj.regex=="-1")break;
         obj.getList(obj.dirInput);
         for (String s : obj.mylist){
             System.out.println(s);
         }
+            if (obj.regex.equals("-1")){
+            tt=false;
+            }
         }
     }
 
