@@ -1,0 +1,13 @@
+Question) - To identify the Design Pattern used in "http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html" with explaination.
+
+
+Solution) --  Problem is solved in following steps : 
+
+1)We have a Runnable interface, which has an abstract method run();
+
+2)The intent here is to issue "run()" methods to objects without knowing anything about the receiver of the request.
+
+3)The base class which is the Runnable Interface contains a run() method that simply calls the action on the receiver, hence the design pattern is exact replica of "Command Design Pattern"
+
+4)here Runnable Interface type which invokes a method run () in an implementation of a different abstract/interface like thread object which has been encapsulated by the run() command whenever we need to execute the run() command for the thread object, therefore no other design pattern would be replacing Command Pattern here.
+

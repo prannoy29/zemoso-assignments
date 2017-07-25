@@ -1,0 +1,16 @@
+Question) - To identify the Design Pattern used in "http://docs.oracle.com/javase/8/docs/api/java/awt/Container.html#add-java.awt.Component-" and explain why is it so.
+
+
+Solution) -- Problem is solved in following steps : 
+
+1) We have an Abstract Class called "Component Class", which implements three interfaces called ImageObserve,MenuContainer and Serializable.
+
+2)Now we have a concrete class named "Container Class" which extends the "Abstract Component Class".
+
+3)The Container Class have private fields of Component object and List of Component objects.
+
+4)The Container class has now the method "public Component add(Component comp)" which appends the specified component to the end of this container, the method uses a method called "adddImpl" which in turns adds Component objects to List <Component>.
+
+5)The description is equivalent to that of a Composite Pattern, where an abstract base class (Component) that specifies the behavior that needs to be exercised by the Container Class methods. Each Container object "couples" itself only to the abstract type Component as it manages its "children"(Component object is child of Container object).
+
+6)As the code represents the hierarchial relationship between Component and Container objects(taking an instance of same abstract/interface type into a tree structure), threfore the "Composite Design Pattern" is apt.
